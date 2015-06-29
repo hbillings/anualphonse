@@ -1,12 +1,64 @@
 {% extends "_base.html" %}
-
 {% block content %}
 <div class="container">
-  <div class="jumbotron">
-    <h1>Welcome to your new project!</h1>
-    <p>Replace this message with your own content in <code>{{ PROJECT_PATH }}/index.html</code>.</p>
-    <p>Learn more on the <a href="_example.html">example page</a>.</p>
+  <div id="header-wrapper">
+    <div id="play-bar">
+      <div id="tiny-player">
+        <i class="fi-play"></i>
+        <i class="fi-next"></i>
+        <p>"Love Does"</p>
+      </div>
+      <nav>
+        <ul id="main-nav">
+          {% for row in navigation %}
+            <li><a href="{{ row.link }}">{{ row.nav_item }}</a></li>
+          {% endfor %}
+        </ul>
+        <ul id="social">
+          <li><i class="fi-social-instagram"></i></li>
+          <li><i class="fi-social-facebook"></i></li>
+          <li><i class="fi-social-twitter"></i></li>
+          <li><i class="fi-social-youtube"></i></li>
+          <li><i class="fi-social-spotify"></i></li>
+        </ul>
+      </nav>
+    </div>
+    <header>
+        <img class="logo" alt="Anu Alphonse, singer-songwriter in Chicago, IL" src="{{ main_img }}">
+      {% if news_ticker %}<div id="news-ticker">{{ news_ticker }}</div>{% endif %}
+      </header>
   </div>
+  <section class="row">
+    <div class="small-12 medium-9 columns">
+          <p>{{ about }}</p>
+      <p>{{ about2 }}</p>
+
+    </div>
+    <div class="sidebar small-12 medium-3 columns">
+    <h4>Shows</h4>
+    {% for row in shows %}
+      <div class="show">
+        <p class="date"><i class="fi-star"></i>{{ row.date }}{% if row.time %}<span class="time"> ({{ row.time }} p.m.)</span>{% endif %}</p>
+        <p class="location"><span class="venue">{{ row.venue }},</span> <span class="city">{{ row.city }}</span></p>
+        <p class="other-artists">{{ row.artists }}</p>
+        <p class="ticket"><a href="{{ row.ticket_link }}">Get tickets</a></p>
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+  <script type="text/template" id="photos">
+    <div class="photo">
+      <img src="<%= data.images.standard_resolution.url %>" />
+      <p><%= data.caption.text %></h1>
+    </div>
+  </script>
+  <section id="photo-strip-container" class="row">
+    <!-- underscore target -->
+    <div id="photo-strip" class="small-8 offset-2 columns"></div>
+  </section>
+  <footer>
+    <p>© Copyright 2015 Anu Alphonse</p>
+  </footer>
 </div>
 {% endblock content %}
 
