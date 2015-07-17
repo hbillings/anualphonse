@@ -1,0 +1,235 @@
+* { padding: 0; margin: 0; }
+
+body {
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: 'Lato', Helvetica, sans-serif;
+}
+
+a,
+a:link,
+a:visited { color: #61838f; text-decoration: underline; }
+a.button { color: white; }
+nav a,
+nav a:link,
+nav a:visited { text-decoration: none; color:  #abad44}
+p { margin-top: 20px; line-height: 1.6; }
+section { margin: 40px auto; }
+
+#play-bar {
+    height: 60px;
+    width: 85%;
+    max-width: 1000px;
+    margin: auto;
+    color: #61838f;
+}
+#play-bar i { font-size: 25px; margin: 0 7px;}
+#tiny-player { float: left; }
+#pause { display: none; }
+#song-title {
+    display: block;
+    float: right;
+    margin: 5px 0 0 20px;
+}
+#song-title:before,
+#song-title:after {
+    content: '"';
+}
+
+ul#social { float: right; margin: 0;}
+#social li { display: inline-block; }
+
+#header-wrapper {
+    background-color: #000;
+    background-image: url("assets/img/binding_dark.png");
+    padding: 10px 0 0 0;
+    margin-bottom: 40px;
+}
+
+header {
+    background-image: url("assets/img/header-tiny.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    position: relative;
+    border: 1px solid #2a3238;
+    -webkit-box-shadow: 0px 0px 20px 1px rgba(42,50,56,1);
+    -moz-box-shadow: 0px 0px 20px 1px rgba(42,50,56,1);
+    box-shadow: 0px 0px 20px 1px rgba(42,50,56,1);
+    clear: both;
+}
+
+
+.logo {
+    max-width: 200px;
+    margin: 10px;
+}
+nav { width: 60%; float: right; }
+ul#main-nav {
+    list-style-type: none;
+    /*font-size: 1.5rem;*/
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    float:left;
+}
+ul#main-nav li {
+    display: inline-block;
+    color: #abad44;
+    margin: 0 1rem;
+}
+#news-ticker {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1.3rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/* Shows sidebar */
+.sidebar { border-left: 1px solid #eee; }
+.sidebar p { margin: 2px 0; font-size: 85%; }
+
+.show {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0 10px 20px;
+}
+
+.venue,
+.city {
+    color: #666;
+    font-style: italic;
+}
+p.date {
+    margin-left: -20px;
+    padding-left: 2px;
+    font-size:15px;
+    font-weight: bold;
+}
+.ticket { margin-bottom: 10px; }
+.date .fi-star { color: #abad44; margin: 0 6px 0 0; }
+
+/* Photos */
+#photo-strip {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    /*background-image: url("/assets/img/binding_dark.png");*/
+}
+.photo {
+    width: 250px;
+    float: left;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #eee;
+    flex-basis: length;
+}
+.photo img {
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #999;
+}
+.photo p {
+    font-size: 12px;
+    max-width: 225px;
+    margin: 10px auto;
+}
+.photo p:last-child {
+    text-align: right;
+}
+.meta {
+    max-width: 225px;
+    margin: 5px auto 10px;
+}
+.meta p {
+    display: inline-block;
+    color: #999;
+    margin: 10px 10px 5px 0;
+}
+.likes,
+.comments { float: right; }
+.slick-track {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-top: -10px;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  opacity: 0.5;
+}
+.slick-prev {
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-right:25px solid #abad44;
+}
+.slick-next {
+    right: 0px;
+    width: 0;
+    height: 0;
+    border-left:25px solid #abad44;
+}
+
+.slick-slider button:hover,
+.slick-slider button:focus,
+.slick-slider button:active {
+    background-color: transparent;
+    opacity: 1.0;
+}
+
+footer {
+    width: 100%;
+    padding: 10px 40px;
+    margin-top: 60px;
+    color: white;
+    text-align: center;
+    background-image: url("assets/img/binding_dark.png");
+}
+
+@media all and (min-width: 380px) {
+    header {
+        background-image: url("assets/img/header-small.jpg");
+        min-height: 500px;
+    }
+}
+
+@media all and (min-width: 767px) {
+    header {
+        background-image: url("assets/img/header-medium.jpg");
+        min-height: 700px;
+        width: 80%;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .logo {
+        max-width: 450px;
+        margin: 20px 40px;
+    }
+}
+
+@media all and (min-width: 1000px) {
+    header {
+        background-image: url("assets/img/color-adjusted-anu-large.png");
+        min-height: 650px;
+    }
+}
+

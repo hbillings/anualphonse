@@ -4,22 +4,19 @@
   <div id="header-wrapper">
     <div id="play-bar">
       <div id="tiny-player">
-        <i class="fi-play"></i>
-        <i class="fi-next"></i>
-        <p>"Love Does"</p>
+        <i class="fi-previous" id="rewind"></i>
+        <i class="fi-play" id="play"></i>
+        <i class="fi-pause" id="pause"></i>
+        <i class="fi-next" id="ff"></i>
+        <p id="song-title"></p>
       </div>
       <nav>
-        <ul id="main-nav">
-          {% for row in navigation %}
-            <li><a href="{{ row.link }}">{{ row.nav_item }}</a></li>
-          {% endfor %}
-        </ul>
         <ul id="social">
-          <li><i class="fi-social-instagram"></i></li>
-          <li><i class="fi-social-facebook"></i></li>
-          <li><i class="fi-social-twitter"></i></li>
-          <li><i class="fi-social-youtube"></i></li>
-          <li><i class="fi-social-spotify"></i></li>
+          <li><a href="https://instagram.com/anualphonse/" alt="Follow Anu on Instagram"><i class="fi-social-instagram"></i></a></li>
+          <li><a href="https://www.facebook.com/anualphonse" alt="Follow Anu on Facebook"><i class="fi-social-facebook"></i></a></li>
+          <li><a href="https://twitter.com/anualphonse" alt="Follow Anu on Twitter"><i class="fi-social-twitter"></i></a></li>
+          <li><a href="https://www.youtube.com/user/anualphonse/videos" alt="Watch Anu on YouTube"><i class="fi-social-youtube"></i></a></li>
+          <li><a href="https://open.spotify.com/album/3LfM9TnhXuBqHMxpaaKAT9" alt="Get Anu's EP on Spotify"><i class="fi-social-spotify"></i></a></li>
         </ul>
       </nav>
     </div>
@@ -30,7 +27,7 @@
   </div>
   <section class="row">
     <div class="small-12 medium-9 columns">
-          <p>{{ about }}</p>
+      <p>{{ about }}</p>
       <p>{{ about2 }}</p>
 
     </div>
@@ -49,10 +46,21 @@
   <script type="text/template" id="photos">
     <div class="photo">
       <img src="<%= data.images.standard_resolution.url %>" />
-      <p><%= data.caption.text %></h1>
+      <div class="meta">
+        <p><%= data.created_time %></p>
+        <% if (data.likes.count != 0) { %>
+          <p class="likes"><%= data.likes.count %> <i class="fi-heart"></i></p>
+        <% } %>
+        <% if (data.comments.count != 0) { %>
+          <p class="comments"><%= data.comments.count %> <i class="fi-comment"></i></p>
+        <% } %>
+      </div>
+      <p><%= data.caption.text %></p>
+      <p><a href="<%= data.link %>">See more on Instagram »</a></p>
     </div>
   </script>
   <section id="photo-strip-container" class="row">
+    <h4>On the road and in the studio</h4>
     <!-- underscore target -->
     <div id="photo-strip" class="small-8 offset-2 columns"></div>
   </section>
