@@ -35,6 +35,7 @@ S3_BUCKETS = {
     
     "production": "production.tarbell/anualphonse",
     "staging": "staging.tarbell/anualphonse",
+    "anualphonse": "anualphonse",
 }
 
 # Default template variables

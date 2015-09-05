@@ -1,6 +1,17 @@
-        <ul id="main-nav">
+      <nav>
+      {% if navigation %}
+      <ul id="main-nav">
           {% for row in navigation %}
             <li><a href="{{ row.link }}">{{ row.nav_item }}</a></li>
           {% endfor %}
         </ul>
+        {% endif %}
+        <ul id="social">
+          <li><a href="https://instagram.com/anualphonse/" alt="Follow Anu on Instagram"><i class="fi-social-instagram"></i></a></li>
+          <li><a href="https://www.facebook.com/anualphonse" alt="Follow Anu on Facebook"><i class="fi-social-facebook"></i></a></li>
+          <li><a href="https://twitter.com/anualphonse" alt="Follow Anu on Twitter"><i class="fi-social-twitter"></i></a></li>
+          <li><a href="https://www.youtube.com/user/anualphonse/videos" alt="Watch Anu on YouTube"><i class="fi-social-youtube"></i></a></li>
+          <li><a href="https://open.spotify.com/album/3LfM9TnhXuBqHMxpaaKAT9" alt="Get Anu's EP on Spotify"><i class="fi-social-spotify"></i></a></li>
+        </ul>
+      </nav>
 

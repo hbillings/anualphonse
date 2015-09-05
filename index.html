@@ -10,37 +10,36 @@
         <i class="fi-next" id="ff"></i>
         <p id="song-title"></p>
       </div>
-      <nav>
-        <ul id="social">
-          <li><a href="https://instagram.com/anualphonse/" alt="Follow Anu on Instagram"><i class="fi-social-instagram"></i></a></li>
-          <li><a href="https://www.facebook.com/anualphonse" alt="Follow Anu on Facebook"><i class="fi-social-facebook"></i></a></li>
-          <li><a href="https://twitter.com/anualphonse" alt="Follow Anu on Twitter"><i class="fi-social-twitter"></i></a></li>
-          <li><a href="https://www.youtube.com/user/anualphonse/videos" alt="Watch Anu on YouTube"><i class="fi-social-youtube"></i></a></li>
-          <li><a href="https://open.spotify.com/album/3LfM9TnhXuBqHMxpaaKAT9" alt="Get Anu's EP on Spotify"><i class="fi-social-spotify"></i></a></li>
-        </ul>
-      </nav>
+      {% include "_nav.html" %}
     </div>
     <header>
         <img class="logo" alt="Anu Alphonse, singer-songwriter in Chicago, IL" src="{{ main_img }}">
-      {% if news_ticker %}<div id="news-ticker">{{ news_ticker }}</div>{% endif %}
+
+        <div class="sidebar small-12 medium-3 columns">
+        <h4>Upcoming Shows</h4>
+        {% for row in shows %}
+          <div class="show">
+            <p class="date"><i class="fi-star"></i>{{ row.date }}{% if row.time %}<span class="time"> ({{ row.time }} p.m.)</span>{% endif %}</p>
+            <p class="location"><span class="venue">{{ row.venue }},</span> <span class="city">{{ row.city }}</span></p>
+            <p class="other-artists">{{ row.artists }}</p>
+            <p class="ticket"><a href="{{ row.ticket_link }}">Tickets</a></p>
+          </div>
+        {% endfor %}
+        </div>
+
       </header>
   </div>
   <section class="row">
-    <div class="small-12 medium-9 columns">
+    <div class="small-12 medium-8 columns">
       <p>{{ about }}</p>
       <p>{{ about2 }}</p>
-
     </div>
-    <div class="sidebar small-12 medium-3 columns">
-    <h4>Shows</h4>
-    {% for row in shows %}
-      <div class="show">
-        <p class="date"><i class="fi-star"></i>{{ row.date }}{% if row.time %}<span class="time"> ({{ row.time }} p.m.)</span>{% endif %}</p>
-        <p class="location"><span class="venue">{{ row.venue }},</span> <span class="city">{{ row.city }}</span></p>
-        <p class="other-artists">{{ row.artists }}</p>
-        <p class="ticket"><a href="{{ row.ticket_link }}">Get tickets</a></p>
+    <div class="small-12 medium-4 columns">
+      <h4>Get the album</h4>
+      <img src="assets/img/still-life-cover.jpg">
+      <div class="downloads">
+        <a href="https://itunes.apple.com/us/album/back-to-you/id642599382?i=642599639&ign-mpt=uo%3D4"><i class="fi-download"></i> iTunes</a>  <a href="http://www.amazon.com/Still-Life-Anu-Alphonse/dp/B00HDZPAPA/ref=sr_1_4?ie=UTF8&qid=1432502270&sr=8-4&keywords=anu+alphonse"><i class="fi-download"></i> Amazon</a>
       </div>
-    {% endfor %}
     </div>
   </section>
   <script type="text/template" id="photos">
@@ -60,7 +59,7 @@
     </div>
   </script>
   <section id="photo-strip-container" class="row">
-    <h4>On the road and in the studio</h4>
+    <!--<h4>Photo album</h4>-->
     <!-- underscore target -->
     <div id="photo-strip" class="small-8 offset-2 columns"></div>
   </section>
