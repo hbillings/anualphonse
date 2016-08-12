@@ -15,7 +15,7 @@
     <header>
         <img class="logo" alt="Anu Alphonse, singer-songwriter in Chicago, IL" src="img/nameplate-no-tag.png">
 
-        <div class="sidebar small-12 medium-3 columns">
+        <div class="sidebar small-12 medium-5 columns">
         <h4>See a show</h4>
         <div id="events-list"></div>
         {#{% for row in shows %}
@@ -26,6 +26,9 @@
             <p class="ticket"><a href="{{ row.ticket_link }}">Tickets</a></p>
           </div>
         {% endfor %}#}
+        <script type='text/javascript' src='http://www.bandsintown.com/javascripts/bit_widget.js'></script>
+<a href='http://www.bandsintown.com' class='bit-widget-initializer' data-artist='AnuAlphonse' data-notify-me="false" data-bg-color="#2a3238" data-separator-color="#2a3238" data-text-color="#999999" data-div-id="events-list">Bandsintown</a>
+          <a href="">View past events »</a>
         </div>
 
       </header>
@@ -49,7 +52,7 @@
     <div id="photo-strip" class="small-8 offset-2 columns"></div>
   </section>
   <footer>
-    <p>© Copyright 2015 Anu Alphonse</p>
+    <p>© Copyright 2016 Anu Alphonse</p>
   </footer>
 </div>
   <script type="text/template" id="events">

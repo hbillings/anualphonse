@@ -93,9 +93,18 @@ ul#main-nav li a { color: #666; }
 .downloads a{ margin: 0 20px; }
 
 /* Shows sidebar */
-.sidebar { color: #d0d0d0; position: absolute; bottom: 0; margin-left: 20px; }
+.sidebar {
+  color: #d0d0d0;
+  position: absolute;
+  bottom: 0;
+  /*background: #2a3238;*/
+  padding: 1rem 1.5rem;
+}
 .sidebar h4 { color: #eee; }
 .sidebar p { margin: 2px 0; font-size: 85%; }
+.sidebar table {
+  margin-left: -16px;
+}
 
 .show {
     border-bottom: 1px solid #333;
@@ -115,6 +124,75 @@ p.date {
 }
 .ticket { margin-bottom: 10px; }
 .date .fi-star { color: #abad44; margin: 0 6px 0 0; }
+
+/* stupid bandsintown widget overrides */
+a.bit-track-artist-header {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    display: none !important;
+}
+
+.bit-location a {
+    font-weight: normal !important;
+}
+
+#bit-events.bit-widget-container,
+#bit-events table,
+#bit-events table td {
+  background: transparent !important;
+  border: 0;
+  font-family: 'Lato', Helvetica, sans-serif;
+}
+
+#bit-events .bit-header {
+  display: none !important;
+}
+
+#bit-events tr {
+  background: rgba(42,50,56,0.5);
+}
+
+#bit-events th,
+#bit-events td {
+  vertical-align: top;
+}
+
+#bit-events tr[data-bit-event-id] a {
+  color: #d0d0d0 !important;
+}
+
+#bit-events tr[data-bit-event-id] .bit-date a {
+  color: #fff !important;
+  font-weight: bold !important;
+}
+
+#bit-events td .bit-uiButton {
+  white-space: initial!important;
+}
+
+#bit-events tr[data-bit-event-id] .bit-rsvp a {
+  font-family: 'Lato', Helvetica, sans-serif;
+}
+#bit-events tr[data-bit-event-id] .bit-rsvp label {
+  height: auto;
+  padding: 2px 5px;
+  background: transparent;
+  border: none;
+}
+#bit-events tr[data-bit-event-id] .bit-rsvp a:after {
+  content: " on Facebook";
+}
+
+#bit-events tr[data-bit-event-id] .bit-tickets a {
+  /*color: #abad44 !important;*/
+  /*background: #abad44;*/
+  background: #61838f;
+  color: #2a3238 !important;
+  border: 1px solid #eee;
+  padding: 8px 12px;
+  text-decoration: none;
+}
 
 /* Photos */
 #photo-strip {

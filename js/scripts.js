@@ -4,6 +4,12 @@ $(document).ready(function(){
     _convertDate: function(dateObj, getTime){
       var self = this;
       var date = new Date(dateObj);
+
+      // TODO: write newYear and addYear bits
+      if (date.getYear() != nowYear) {
+        addYear();
+      }
+
       var dateString = self._months[date.getMonth()] + " " + date.getDate();
       if (getTime){
         var hours = date.getHours();
@@ -164,7 +170,7 @@ $(document).ready(function(){
       var self = this;
       var eventTemplate = _.template($("#events").html());
       _.each(events, function(item){
-        console.log(item);
+        //console.log(item);
         item["datetime"] = dateHandler._convertDate(item["datetime"], true);
         $("#events-list").append(eventTemplate({ data: item }));
       });
@@ -195,6 +201,6 @@ $(document).ready(function(){
   }
 
   audioPlayer.setUp();
-  events.getEventFeed("http://api.bandsintown.com/artists/AnuAlphonse/events.json?app_id=anualphonse&date=all", 3);
+  //events.getEventFeed("http://api.bandsintown.com/artists/AnuAlphonse/events.json?app_id=anualphonse&date=all", 3);
   picStrip.getInstagramFeed("https://api.instagram.com/v1/users/239351137/media/recent/?client_id=5fbcc27fe79f42d6be1e3861498a176d");
 });
