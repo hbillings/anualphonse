@@ -99,6 +99,7 @@ ul#main-nav li a { color: #666; }
   bottom: 0;
   /*background: #2a3238;*/
   padding: 1rem 1.5rem;
+  font-size: 13px;
 }
 .sidebar h4 { color: #eee; }
 .sidebar p { margin: 2px 0; font-size: 85%; }
@@ -158,6 +159,15 @@ a.bit-track-artist-header {
   vertical-align: top;
 }
 
+#bit-events td {
+  padding: 12px 12px 12px 0;
+}
+
+#bit-events[data-bit-widget-id] th {
+  background-color: #abad44 !important;
+  color: #000 !important;
+}
+
 #bit-events tr[data-bit-event-id] a {
   color: #d0d0d0 !important;
 }
@@ -185,13 +195,14 @@ a.bit-track-artist-header {
 }
 
 #bit-events tr[data-bit-event-id] .bit-tickets a {
-  /*color: #abad44 !important;*/
-  /*background: #abad44;*/
-  background: #61838f;
-  color: #2a3238 !important;
-  border: 1px solid #eee;
+  color: #abad44 !important;
+  /*background: #61838f;*/
+  /*color: #fff !important;*/
+  border: 3px solid #abad44;
   padding: 8px 12px;
   text-decoration: none;
+  font-weight: bold !important;
+  text-transform: uppercase;
 }
 
 /* Photos */
