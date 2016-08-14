@@ -49,9 +49,10 @@ ul#social { float: right; margin: 0;}
 }
 
 header {
-    background-image: url("../img/header-tiny.jpg");
-    background-position: center;
+    /*background-image: url("../img/header-tiny.jpg");*/
+    background-image: url("../img/lead_img_aug2016.jpg");
     background-repeat: no-repeat;
+    background-position: center left;
     min-height: 300px;
     position: relative;
     border: 1px solid #2a3238;
@@ -63,7 +64,7 @@ header {
 
 
 .logo {
-    max-width: 200px;
+    max-width: 300px;
     margin: 10px;
 }
 nav { width: 70%; float: right; }
@@ -101,7 +102,7 @@ ul#main-nav li a { color: #666; }
   padding: 1rem 1.5rem;
   font-size: 13px;
 }
-.sidebar h4 { color: #eee; }
+.sidebar h4 { color: #eee; text-shadow: 2px 2px 0px #61838f; }
 .sidebar p { margin: 2px 0; font-size: 85%; }
 .sidebar table {
   margin-left: -16px;
@@ -151,7 +152,7 @@ a.bit-track-artist-header {
 }
 
 #bit-events tr {
-  background: rgba(42,50,56,0.5);
+  background: rgba(42,50,56,0.9);
 }
 
 #bit-events th,
@@ -323,13 +324,15 @@ footer {
 
     .logo {
         max-width: 500px;
-        margin: 30px 20px;
+        margin: 20px 30px;
+        float: right;
     }
 }
 
 @media all and (min-width: 1000px) {
     header {
-        background-image: url("../img/color-adjusted-anu-large.png");
+        background-position: center;
+        background-image: url("../img/lead_img_aug2016.jpg");
         min-height: 650px;
     }
 }

@@ -197,7 +197,6 @@ $(document).ready(function(){
 
   audioPlayer.setUp();
   //events.getEventFeed("http://api.bandsintown.com/artists/AnuAlphonse/events.json?app_id=anualphonse&date=all", 3);
-  //picStrip.getInstagramFeed("https://api.instagram.com/v1/users/239351137/media/recent/?client_id=5fbcc27fe79f42d6be1e3861498a176d");
-  //picStrip.getInstagramFeed("https://api.instagram.com/v1/users/1490284/media/recent/?client_id=5fbcc27fe79f42d6be1e3861498a176d&access_token=1490284.5fbcc27.506a5ac1c0ba4642afb7c64b40a12ad4")
+  picStrip.getInstagramFeed("https://api.instagram.com/v1/users/239351137/media/recent/?client_id=5fbcc27fe79f42d6be1e3861498a176d&access_token=239351137.5fbcc27.9d8b9a2eda6142a5b236be34473ab05e");
 });
 
